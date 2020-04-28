@@ -8,9 +8,15 @@
 
 int check_cycle(listint_t *list)
 {
-	int i = 0;
-	listint_t *temp = NULL;
+	listint_t *tortoise = list;
+	listint_t *hare = list;
 
-	printf("%d\n", i);
+	while (tortoise && hare)
+	{
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+		if (tortoise == hare)
+			return (1);
+	}
 	return (0);
 }
