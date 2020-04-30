@@ -5,6 +5,7 @@ if __name__ == "__main__":
 
     if len(sys.argv) != 4:
         print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
+        exit(1)
     elif (sys.argv[2][0] not in '+-*/'):
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
