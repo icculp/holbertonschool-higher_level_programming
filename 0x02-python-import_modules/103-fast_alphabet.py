@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import alpha
-print("{}".format(alpha.str))
+e = map(chr, range(65, 91))
+print(*e, sep="")

@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+str = list(range(chr(65), chr(92)))
