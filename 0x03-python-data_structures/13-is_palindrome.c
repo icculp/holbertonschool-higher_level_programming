@@ -9,31 +9,30 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp;
-	int i = 0, j = 0, len;
+	int i = 0, j = 0;
 	int arr[100], arr2[100];
 
 	if (head == NULL)
-		return (1);
+		return (0);
 	if (*head == NULL)
 		return (1);
 	temp = *head;
+	if (temp->next == NULL)
+		return (1);
 	while (temp != NULL)
 	{
 		arr[i] = temp->n;
+		arr2[i] = temp->n;
 		temp = temp->next;
 		i++;
 	}
-	len = i;
 	i--;
 	while (i >= 0)
 	{
-		arr2[j] = arr[i];
-		j++, i--;
-	}
-	for (i = 0; i < len; i++)
-	{
-		if (arr[i] != arr2[i])
+		printf("arr: %d, arr2: %d\n", arr[i], arr2[j]);
+		if (arr[i] != arr2[j])
 			return (0);
+		i--, j++;
 	}
 	return (1);
 }
