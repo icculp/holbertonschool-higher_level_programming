@@ -20,7 +20,7 @@ void print_python_list_info(PyObject *p)
 /**ntf("[*] Size he Python list = %lu\n", ((PyVarObject *)p)->ob_size);*/
 
 	printf("[*] Size of the Python list = %lu\n", len);
-	printf("Allocated = %lu\n", ((PyListObject *)p)->allocated);
+	printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
 
 	while (i < len)
 	{
