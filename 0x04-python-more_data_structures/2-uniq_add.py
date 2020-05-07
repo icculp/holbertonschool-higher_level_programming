@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
+    if (len(my_list) == 0):
+        return None
     new1 = my_list.copy()
     new1.sort()
     sum = 0
