@@ -1,9 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/pythfn3
+#mport hash
 def multiply_by_2(a_dictionary):
-    if a_dictionary:
-        new = a_dictionary.copy()
-        for key in new:
-            v = new.get(key)
-            v *= 2
-            new.update({key: v})
-        return new
+    new = a_dictionary.copy()
+    i = 0
+    for key in new:
+        new[key] *= 2
+    return new
