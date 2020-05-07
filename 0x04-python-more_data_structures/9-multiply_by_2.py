@@ -1,5 +1,4 @@
 #!/usr/bin/pythfn3
-#mport hash
 def multiply_by_2(a_dictionary):
     new = a_dictionary.copy()
     i = 0
