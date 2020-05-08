@@ -38,6 +38,5 @@ def roman_to_int(roman_string):
                 i += 100
             elif r[c] == 'D':
                 i += 500
-        print(i)
         p = r[c]
     return i
