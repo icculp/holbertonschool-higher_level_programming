@@ -15,12 +15,14 @@ def roman_to_int(roman_string):
                 i += 9
             elif r[c] == 'V' and p != 'I':
                 i += 5
-            elif r[c] == 'X' and p != 'I':
+            elif r[c] == 'X' and p != 'I' and r[c + 1] not in 'CL':
                 i += 10
             elif r[c] == 'L':
                 i += 50
-            elif r[c] == 'C':
+            elif r[c] == 'C' and p != 'X':
                 i += 100
+            elif r[c] == 'C' and p == 'X':
+                i += 90
             elif r[c] == 'D':
                 i += 500
         else:
@@ -30,15 +32,12 @@ def roman_to_int(roman_string):
                 i += 5
             elif r[c] == 'X' and p != 'I':
                 i += 10
-            elif r[c] == 'V' and p == 'I':
-                i += 4
-            elif r[c] == 'V' and p == 'I':
-                i += 9
             elif r[c] == 'L':
                 i += 50
             elif r[c] == 'C':
                 i += 100
             elif r[c] == 'D':
                 i += 500
+        print(i)
         p = r[c]
     return i
