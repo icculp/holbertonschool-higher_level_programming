@@ -30,6 +30,10 @@ def roman_to_int(roman_string):
                 i += 5
             elif r[c] == 'X' and p != 'I':
                 i += 10
+            elif r[c] == 'V' and p == 'I':
+                i += 4
+            elif r[c] == 'V' and p == 'I':
+                i += 9
             elif r[c] == 'L':
                 i += 50
             elif r[c] == 'C':
