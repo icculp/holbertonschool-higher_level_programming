@@ -5,5 +5,5 @@ def safe_print_integer_err(value):
         return True
     except Exception as ex:
         import sys
-        print("{}".format(ex), file=sys.stderr)
+        print("Exception: {}".format(ex), file=sys.stderr)
         return False
