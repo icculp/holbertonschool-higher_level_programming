@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __name__ != "__main__":
+if __name__ == "__main__":
     def list_division(my_list_1, my_list_2, list_length):
         c = [None] * list_length
         for i in range(len(my_list_2)):
