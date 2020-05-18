@@ -7,7 +7,9 @@ def magic_calculation(a, b):
                 raise Exception('Too far')
             else:
                 result += a ** b / i
-                break
         except:
             result = b + a
+            break
     return result
+from dis import dis
+dis(magic_calculation)
