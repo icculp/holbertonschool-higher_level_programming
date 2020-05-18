@@ -14,4 +14,8 @@ if __name__ != "__main__":
             except IndexError:
                 print("out of range")
                 c[i] = 0
+            except:
+                c[i] = 0
+            finally:
+                print(end='')
         return c
