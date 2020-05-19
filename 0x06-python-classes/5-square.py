@@ -25,7 +25,10 @@ class Square:
         return (self.__size*self.__size)
 
     def my_print(self):
-        for row in range(self.__size):
-            for column in range(self.__size):
-                print("#", end="")
+        if self.__size == 0:
             print()
+        else:
+            for row in range(self.__size):
+                for column in range(self.__size):
+                    print("#", end="")
+                print()
