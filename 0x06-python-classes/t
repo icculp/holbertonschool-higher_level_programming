@@ -1,5 +1,0 @@
-
-#           for x in range(self.__position[1]):
-#               print()
-#           for x in range(self.__position[0]):
-#               print(" ", end="")
