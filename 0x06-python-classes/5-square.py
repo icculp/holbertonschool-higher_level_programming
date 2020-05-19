@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""D"""
+
+
 class Square:
     """Defines a square"""
 
@@ -24,5 +27,5 @@ class Square:
     def my_print(self):
         for row in range(self.__size):
             for column in range(self.__size):
-                print("#",end="")
+                print("#", end="")
             print()
