@@ -7,8 +7,17 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """INIT"""
-        self.__size = size
-        self.__position = position
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
+        if not isinstance(position, tuple)\
+                or (position[0] < 0) or (position[1] < 0):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = position
 
     @property
     def size(self):
@@ -34,7 +43,7 @@ class Square:
     def position(self, value):
         """GOSHDANGDOCSTRING"""
         if not isinstance(value, tuple)\
-                or __position[0] < 0 or __position[1] < 0:
+                or (value[0] < 0) or (value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
