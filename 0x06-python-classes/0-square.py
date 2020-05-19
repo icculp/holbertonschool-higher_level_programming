@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Where did you tell us all modules need docstrings? Nowhere."""
+"""Module docstring"""
 
 
 class Square:
-    """I had this, but stupid checker didn't like it"""
+    """Class docstring"""
     pass
