@@ -55,8 +55,9 @@ class SinglyLinkedList:
     def __str__(self):
         li = ""
         current = self.__head
-        while current.next_node:
-            li += str(current.data) + "\n"
-            current = current.next_node
-        li += str(current.data)
+        if current is not None:
+            while current.next_node:
+                li += str(current.data) + "\n"
+                current = current.next_node
+            li += str(current.data)
         return li
