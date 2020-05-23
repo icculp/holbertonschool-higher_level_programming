@@ -1,1 +1,37 @@
-  
+Module ``0-add_integer``
+========================
+Using add_integer
+-----------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+
+>>> add_integer(2, 3)
+5
+
+>>> add_integer(2)
+100
+
+>>> add_integer(-3, -3)
+-6
+
+>>> add_integer(4.5, 3)
+7
+
+>>> add_integer(10.1, 10.1)
+20
+
+>>> try:
+...     add_integer("d", "f")
+... except Exception as e:
+...      print(e)
+a must be an integer
+
+>>> try:
+...     add_integer(3, "a")
+... except Exception as e:
+...     print(e)
+b must be an integer
+
+>>> add_integer(1234, 1234)
+2468
