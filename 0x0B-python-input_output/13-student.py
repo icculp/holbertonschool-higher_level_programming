@@ -34,6 +34,6 @@ class Student:
         if 'age' in json:
             self.age = json['age']
         if 'last_name' in json:
-           self.last_name = json['last_name']
+            self.last_name = json['last_name']
         if 'fart' in json:
             print("Jason farted")
