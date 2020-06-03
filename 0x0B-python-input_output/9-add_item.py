@@ -9,13 +9,13 @@ import sys
 
 
 load = __import__('8-load_from_json_file').load_from_json_file
+save = __import__('7-save_to_json_file').save_to_json_file
 
 try:
     loaded = load('add_item.json')
 except FileNotFoundError:
     loaded = []
 
-save = __import__('7-save_to_json_file').save_to_json_file
 for s in range(1, len(sys.argv)):
     loaded += sys.argv[s]
 save(loaded, "add_item.json")
