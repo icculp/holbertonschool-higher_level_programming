@@ -7,6 +7,20 @@ Using ``BaseGeomtry``
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
+>>> type(bg) is BaseGeometry
+True
+
+>>> isinstance(bg, BaseGeometry)
+True
+
+>>> bg.integer_validator("what", None)
+Traceback (most recent call last):
+TypeError: what must be an integer
+
+>>> bg.integer_validator("whatevs", 2.3)
+Traceback (most recent call last):
+TypeError: whatevs must be an integer
+
 >>> bg.integer_validator("my_int", 12)
 
 >>> bg.integer_validator("width", 89)
@@ -48,3 +62,5 @@ ValueError: age must be greater than 0
 >>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
 ValueError: distance must be greater than 0
+
+>>> bg.integer_validator("", 3)
