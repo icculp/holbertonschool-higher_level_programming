@@ -16,5 +16,5 @@ except:
     loaded = []
 
 for s in range(1, len(sys.argv)):
-    loaded += sys.argv[s]
+    loaded.append(sys.argv[s])
 save(loaded, "add_item.json")
