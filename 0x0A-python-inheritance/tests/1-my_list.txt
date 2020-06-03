@@ -24,6 +24,10 @@ Using ``MyList``
 >>> type(my_list) is MyList
 True
 
+>>> MyList.print_sorted((1, 2))
+Traceback (most recent call last):
+AttributeError: 'tuple' object has no attribute 'copy'
+
 >>> MyList()
 []
 
@@ -51,9 +55,12 @@ True
 >>> my_list.print_sorted()
 [-2, -1, 1, 2, 3, 4, 5, inf]
 
+>>> my_list.append("c")
+
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: unorderable types: str() < int()
 
 >>> my_list.append()
 Traceback (most recent call last):
 TypeError: append() takes exactly one argument (0 given)
-
-
