@@ -12,7 +12,7 @@ save = __import__('7-save_to_json_file').save_to_json_file
 
 try:
     loaded = load('add_item.json')
-except FileNotFoundError:
+except:
     loaded = []
 
 for s in range(1, len(sys.argv)):
