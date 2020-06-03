@@ -105,3 +105,9 @@ TypeError: distance must be an integer
 >>> bg.integer_validator("distance", None)
 Traceback (most recent call last):
 TypeError: distance must be an integer
+
+>>> type(BaseGeometry.area)
+<class 'function'>
+
+>>> type(BaseGeometry.area)
+<class 'function'>
