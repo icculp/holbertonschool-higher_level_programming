@@ -35,6 +35,9 @@ True
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5, inf]
 
+>>> MyList.print_sorted([1, 2, 3, 4, 5, float('inf')])
+[1, 2, 3, 4, 5, inf]
+
 >>> my_list.append(-1)
 
 >>> my_list.append(-2)
