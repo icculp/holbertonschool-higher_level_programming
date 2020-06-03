@@ -11,6 +11,29 @@ Using ``BaseGeomtry``
 
 >>> bg.integer_validator("width", 89)
 
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator("whatever")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> BaseGeometry.area()
+Traceback (most recent call last):
+TypeError: area() missing 1 required positional argument: 'self'
+
+>>> BaseGeometry.area(2, 3)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> BaseGeometry.area(2)
+Traceback (most recent call last):
+Exception: area() is not implemented
 
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
