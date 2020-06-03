@@ -10,6 +10,9 @@ Using ``BaseGeomtry``
 >>> type(bg) is BaseGeometry
 True
 
+>>> type(BaseGeometry)
+<class 'type'>
+
 >>> isinstance(bg, BaseGeometry)
 True
 
@@ -79,7 +82,6 @@ TypeError: name must be an integer
 Traceback (most recent call last):
 ValueError: age must be greater than 0
 
-
 >>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
 ValueError: distance must be greater than 0
@@ -91,3 +93,15 @@ ValueError: distance must be greater than 0
 
 >>> type(bg.area)
 <class 'method'>
+
+>>> bg.integer_validator("distance", int('NaN'))
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'NaN'
+
+>>> bg.integer_validator("distance", float('NaN'))
+Traceback (most recent call last):
+TypeError: distance must be an integer
+
+>>> bg.integer_validator("distance", None)
+Traceback (most recent call last):
+TypeError: distance must be an integer
