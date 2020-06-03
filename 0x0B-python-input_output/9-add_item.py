@@ -15,7 +15,6 @@ try:
 except FileNotFoundError:
     loaded = []
 
-print(type(loaded))
 save = __import__('7-save_to_json_file').save_to_json_file
 for s in range(1, len(sys.argv)):
     loaded += sys.argv[s]
