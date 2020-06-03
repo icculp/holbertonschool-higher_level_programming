@@ -13,6 +13,8 @@ def add_attribute(obj, name, value):
     if '__slots__' in d:
         if name in obj.__slots__:
             setattr(obj, name, value)
+        else:
+            raise TypeError("can't add new attribute")
     elif '__dict__' in d:
         setattr(obj, name, value)
     else:
