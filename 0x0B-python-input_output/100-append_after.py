@@ -14,5 +14,5 @@ def append_after(filename="", search_string="", new_string=""):
                 rl.insert(i + 1, new_string)
                 count += 1
                 continue
-        o = open(filename, 'w', encoding='utf-8')
+    with open(filename, 'w', encoding='utf-8') as o:
         o.writelines(rl)
