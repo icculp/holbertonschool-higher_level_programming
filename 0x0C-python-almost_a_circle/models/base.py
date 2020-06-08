@@ -3,6 +3,7 @@
     Base module
 """
 import json
+import turtle
 
 
 class Base:
@@ -71,3 +72,82 @@ class Base:
             return il
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        ''' serializes to csv '''
+        fn = str(cls.__name__) + ".json"
+        nl = []
+        for obj in list_objs:
+            d = obj.to_dictionary()
+            if cls.__name__ is "Rectangle":
+                nl.append("{},{},{},{},{}\n"
+                          .format(d['id'], d['width'], d['height'],
+                                  d['x'], d['y']))
+            if cls.__name__ is "Square":
+                nl.append("{},{},{},{}\n"
+                          .format(d['id'], d['size'],
+                                  d['x'], d['y']))
+        with open(fn, 'w', encoding='utf-8') as f:
+            f.writelines(nl)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        ''' deserializes from csv '''
+        fn = str(cls.__name__) + ".json"
+        d = dict()
+        fl = []
+        with open(fn, 'r', encoding='utf-8') as f:
+            rl = f.readlines()
+            for r in rl:
+                l = r.split(',')
+                if cls.__name__ is "Rectangle":
+                    d['id'] = int(l[0])
+                    d['width'] = int(l[1])
+                    d['height'] = int(l[2])
+                    d['x'] = int(l[3])
+                    d['y'] = int(l[4])
+                if cls.__name__ is "Square":
+                    d['id'] = int(l[0])
+                    d['size'] = int(l[1])
+                    d['x'] = int(l[2])
+                    d['y'] = int(l[3])
+                fl.append(cls.create(**d))
+        return fl
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        ''' draws using turtle '''
+        d = 90
+        i = 0
+        for rect in list_rectangles:
+            turtle.color('blue', 'orange')
+            turtle.begin_fill()
+            i += 10
+            turtle.forward(rect.width)
+            turtle.left(d)
+            turtle.forward(rect.height)
+            turtle.left(d)
+            turtle.forward(rect.width)
+            turtle.left(d)
+            turtle.forward(rect.height)
+            turtle.left(d + i)
+            turtle.end_fill()
+#           turtle.reset()
+#       i = 0
+        for sqr in list_squares:
+            turtle.color('green', 'yellow')
+            turtle.begin_fill()
+            i += 10
+            turtle.forward(sqr.size)
+            turtle.left(d)
+            turtle.forward(sqr.size)
+            turtle.left(d)
+            turtle.forward(sqr.size)
+            turtle.left(d)
+            turtle.forward(sqr.size)
+            turtle.left(d + i)
+            turtle.end_fill()
+#           turtle.reset()
+
+        turtle.exitonclick()

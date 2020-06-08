@@ -8,7 +8,9 @@ if __name__ == "__main__":
     print(s1)
     print(s1.area())
     s1.display()
-
+    1000000
+    "strings and words that don't do anything"
+    Square(2)
     print("---")
 
     s2 = Square(2, 2)
