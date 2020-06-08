@@ -76,7 +76,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         ''' serializes to csv '''
-        fn = str(cls.__name__) + ".json"
+        fn = str(cls.__name__) + ".csv"
         nl = []
         for obj in list_objs:
             d = obj.to_dictionary()
@@ -94,7 +94,7 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         ''' deserializes from csv '''
-        fn = str(cls.__name__) + ".json"
+        fn = str(cls.__name__) + ".csv"
         d = dict()
         fl = []
         with open(fn, 'r', encoding='utf-8') as f:
