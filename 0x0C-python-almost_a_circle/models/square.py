@@ -10,12 +10,11 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """ Initializing Square """
-        self.size = size
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -25,14 +24,13 @@ class Square(Rectangle):
         elif value <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.__width = value
-            self.__height = value
-            self.__size = value
+            self.width = value
+            self.height = value
 
     def __str__(self):
         ''' [Square] (<id>) <x>/<y> - <size> '''
         s = "[Square] ({}) {}/{} - {}".format(
-            self.id, self.x, self.y, self.__size)
+            self.id, self.x, self.y, self.width)
         return s
 
     def update(self, *args, **kwargs):
@@ -45,9 +43,11 @@ class Square(Rectangle):
         elif 'id' in kwargs:
             self.id = kwargs['id']
         if l[1] is not None:
-            self.__size = args[1]
+            self.width = args[1]
+            self.height = args[1]
         elif 'size' in kwargs:
-            self.__size = kwargs['size']
+            self.width = kwargs['size']
+            self.height = kwargs['size']
         if l[2] is not None:
             self.x = args[2]
         elif 'x' in kwargs:
@@ -61,7 +61,7 @@ class Square(Rectangle):
         ''' dictionary representation of square '''
         d = dict()
         d['id'] = self.id
-        d['size'] = self.__size
+        d['size'] = self.width
         d['x'] = self.x
         d['y'] = self.y
         return d
