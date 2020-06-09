@@ -34,6 +34,7 @@ class Base:
         if list_objs is None:
             with open(fn, 'w', encoding='utf-8') as f:
                 json.dump([], f)
+            return
         s = []
         for obj in list_objs:
             d = obj.to_dictionary()
