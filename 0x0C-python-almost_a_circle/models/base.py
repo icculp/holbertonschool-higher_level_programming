@@ -33,7 +33,7 @@ class Base:
         fn = str(cls.__name__) + '.json'
         if list_objs is None:
             with open(fn, 'w', encoding='utf-8') as f:
-                json.dump("[]", f)
+                json.dump([], f)
         s = []
         for obj in list_objs:
             d = obj.to_dictionary()
