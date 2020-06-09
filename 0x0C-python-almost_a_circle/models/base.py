@@ -39,7 +39,6 @@ class Base:
             d = obj.to_dictionary()
             s.append(d)
         t = Base.to_json_string(s)
-        u = json.loads(t)
         with open(fn, 'w', encoding='utf-8') as f:
             f.write(t)
 
