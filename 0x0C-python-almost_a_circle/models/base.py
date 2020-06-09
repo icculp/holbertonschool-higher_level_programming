@@ -1,4 +1,4 @@
-#!/usr#!/usrython3
+#!/usr/bin/python3
 """
     Base module
 """
