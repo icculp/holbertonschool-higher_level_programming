@@ -61,7 +61,7 @@ class Base:
         elif cls.__name__ ==  "Square":
             dummy = cls(1)
         else:
-            return
+            return None
         dummy.update(**dictionary)
         return dummy
 
