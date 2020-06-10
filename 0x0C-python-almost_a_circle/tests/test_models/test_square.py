@@ -2,6 +2,7 @@
 """ Unittest module for testing models """
 import unittest
 from models.square import Square
+import pep8
 
 
 class TestSquare(unittest.TestCase):
@@ -71,6 +72,12 @@ class TestSquare(unittest.TestCase):
     def test_square_to_dict(self):
         """ tests to_dict function """
         self.assertDictEqual(self.s2.to_dictionary(), {'id': 2, 'size': 2, 'x': 2, 'y': 2})
+
+    def test_pep8(self):
+        """ tests pep8 up in this bitch """
+        p = pep8.StyleGuide(quiet=True)
+        r = p.check_files(['models/square.py'])
+        self.assertEqual(r.total_errors, 0)
 
     def tearDown(self):
         """ done testing, tear down """

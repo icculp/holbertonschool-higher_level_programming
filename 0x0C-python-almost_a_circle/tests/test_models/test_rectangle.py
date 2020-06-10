@@ -2,6 +2,7 @@
 """ Unittest module for testing models """
 import unittest
 from models.rectangle import Rectangle
+import pep8
 
 
 class TestRectangle(unittest.TestCase):
@@ -70,6 +71,12 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_to_dict(self):
         """ tests to_dict function """
         self.assertDictEqual(self.r2.to_dictionary(), {'id': 2, 'width': 2, 'height': 2, 'x': 2, 'y': 2})
+
+    def test_pep8(self):
+        """ tests pep8 up in this bitch """
+        p = pep8.StyleGuide(quiet=True)
+        r = p.check_files(['models/rectangle.py'])
+        self.assertEqual(r.total_errors, 0)
 
     def tearDown(self):
         """ done testing, tear down """

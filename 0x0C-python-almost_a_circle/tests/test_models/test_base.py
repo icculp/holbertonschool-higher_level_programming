@@ -2,6 +2,7 @@
 """ Unittest module for testing models """
 import unittest
 from models.base import Base
+import pep8
 
 
 class TestBase(unittest.TestCase):
@@ -46,6 +47,12 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.base.to_json_string([]), '[]')
         self.assertEqual(self.base.to_json_string([{'x': 2}, {'width': 10}]), '[{\"x\": 2}, {\"width\": 10}]')
 #       self.assertRaises(ValueError, self.base.to_json_string(), [{'1': 2}])
+
+    def test_pep8(self):
+        """ tests pep8 up in this bitch """
+        p = pep8.StyleGuide(quiet=True)
+        r = p.check_files(['models/base.py'])
+        self.assertEqual(r.total_errors, 0)
 
     def tearDown(self):
         """ done testing, tear down """
