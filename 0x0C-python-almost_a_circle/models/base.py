@@ -54,6 +54,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         ''' returns instance with all attributes already set '''
+        if type(dictionary) is not dict:
+            return None
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1, 1, 1, 1)
         elif cls.__name__ ==  "Square":
