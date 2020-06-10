@@ -30,6 +30,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r1.id, 1)
         self.assertEqual(self.r2.id, 2)
 
+    def test_rectangle_bad_values(self):
+        """ testing bad init typechecking """
+        with self.assertRaises(TypeError):
+            Rectangle("1", "1")
+        with self.assertRaises(TypeError):
+            Rectangle(1, "1")
+        with self.assertRaises(ValueError):
+            Rectangle(0, 0)
+        with self.assertRaises(TypeError):
+            Rectangle(1.5, 1.5)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 1, -3, 0)
+        with self.assertRaises(TypeError):
+            Rectangle(1, 1, 1.5)
+        
+
     def tearDown(self):
         """ done testing, tear down """
         pass
