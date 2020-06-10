@@ -44,7 +44,11 @@ class TestRectangle(unittest.TestCase):
             Rectangle(1, 1, -3, 0)
         with self.assertRaises(TypeError):
             Rectangle(1, 1, 1.5)
-        
+
+    def test_rectangle_area(self):
+        """ testing area up in this bitch """
+        self.assertEqual(self.r1.area(), 1)
+        self.assertEqual(self.r2.area(), 4)
 
     def tearDown(self):
         """ done testing, tear down """
