@@ -1,5 +1,4 @@
 -- SQL continues
 -- Task 1
-CREATE USER IF NOT EXISTS user_0d_1@localhost;
-UPDATE mysql.user SET authentication_string = PASSWORD('user_0d_1_pwd') WHERE user = 'user_0d_1' AND host = 'localhost';
+CREATE USER IF NOT EXISTS user_0d_1@localhost IDENTIFIED BY 'user_0d_1_pwd';
 GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
