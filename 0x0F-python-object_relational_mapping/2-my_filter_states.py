@@ -16,10 +16,10 @@ if __name__ == '__main__':
     conn = MySQLdb.connect(host=MY_HOST, port=3306, user=MY_USER,
                            passwd=MY_PASS, db=MY_DB, charset='utf8')
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE BINARY name =\
+                {} ORDER BY id ASC".format(STATE))
     query_rows = cur.fetchall()
     for row in query_rows:
-        if row[1] == STATE:
-            print(row)
+        print(row)
     cur.close()
     conn.close()
