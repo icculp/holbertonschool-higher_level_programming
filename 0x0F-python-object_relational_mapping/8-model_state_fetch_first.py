@@ -5,6 +5,7 @@
 from model_state import Base, State
 from sqlalchemy import create_engine, select, Table, MetaData
 import sys
+from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == '__main__':
@@ -16,9 +17,21 @@ if __name__ == '__main__':
     m = "mysql://{}:{}@{}:3306/{}".format(MY_USER, MY_PASS, MY_HOST, MY_DB)
     engine = create_engine(m, encoding='latin1')
     conn = engine.connect()
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+
+    session = Session()
+    for state in session.query(State).filter_by(id=1).order_by(State.id).all():
+        print("{}: {}".format(state.id, state.name))
+    session.close()
+'''
+    m = "mysql://{}:{}@{}:3306/{}".format(MY_USER, MY_PASS, MY_HOST, MY_DB)
+    engine = create_engine(m, encoding='latin1')
+    conn = engine.connect()
     meta = MetaData(engine)
     table = Table('states', meta, autoload=True, autoload_with=engine)
     slct = select([table]).where(table.c.id == 1)
     res = conn.execute(slct)
     for row in res:
         print(row)
+'''
