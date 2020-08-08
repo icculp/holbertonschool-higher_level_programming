@@ -22,9 +22,12 @@ if __name__ == '__main__':
 #   N = "%s", (N,)
     session = Session()
 #   print(state)
-    for state in session.query(State).filter_by(name=N):
-        if state:
+    sess = session.query(State).filter_by(name=N)
+    flag = 0
+    for state in sess:
+        if state.name == N:
             print("{}".format(state.id))
-        else:
-            print("Not found")
+            flag = 1
+    if flag == 0:
+        print("Not found")
     session.close()
