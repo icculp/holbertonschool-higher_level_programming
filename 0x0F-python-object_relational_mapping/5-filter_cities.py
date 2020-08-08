@@ -25,6 +25,9 @@ if __name__ == '__main__':
                 ORDER BY cities.id ASC", (STATE,))
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row[0])
+        if row[0] != None:
+            print(row[0])
+        else:
+            print()
     cur.close()
     conn.close()
