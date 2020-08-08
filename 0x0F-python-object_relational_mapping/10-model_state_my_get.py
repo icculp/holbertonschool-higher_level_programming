@@ -24,7 +24,7 @@ if __name__ == '__main__':
 #   print(state)
     for state in session.query(State).filter_by(name=N):
         if state:
-            print("{}: {}".format(state.id, state.name))
+            print("{}".format(state.id))
         else:
             print("Not found")
     session.close()
