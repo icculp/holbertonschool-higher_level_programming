@@ -6,6 +6,7 @@ from urllib import request
 import sys
 
 
-ur = sys.argv[1]
-with request.urlopen(ur) as response:
-    print(response.getheader('X-Request-Id'))
+if __name__ == '__main__':
+    ur = sys.argv[1]
+    with request.urlopen(ur) as response:
+        print(response.getheader('X-Request-Id'))
