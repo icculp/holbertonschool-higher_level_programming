@@ -3,9 +3,9 @@
     Task 1
 """
 from urllib import request
-from sys import argv
+import sys
 
 
-ur = argv[1]
+ur = sys.argv[1]
 with request.urlopen(ur) as response:
     print(response.getheader('X-Request-Id'))
