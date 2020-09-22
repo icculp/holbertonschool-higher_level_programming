@@ -12,7 +12,7 @@ req(url, function (error, response, body) {
     let count = 0;
     for (let i = 0; i < jj.results.length; i++) {
       for (let j = 0; j < jj.results[i].characters.length; j++) {
-        if (jj.results[i].characters[j] === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if (jj.results[i].characters[j] === '18') {
           count++;
         }
       }
