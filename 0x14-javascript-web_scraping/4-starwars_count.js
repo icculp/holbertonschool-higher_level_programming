@@ -12,7 +12,7 @@ req(url, function (error, response, body) {
     let count = 0;
     for (let i = 0; i < jj.results.length; i++) {
       for (let j = 0; j < jj.results[i].characters.length; j++) {
-        if (jj.results[i].characters[j] === '18') {
+        if (jj.results[i].characters[j].includes('18')) {
           count++;
         }
       }
