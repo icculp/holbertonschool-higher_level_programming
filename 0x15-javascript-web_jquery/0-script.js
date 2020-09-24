@@ -2,4 +2,5 @@
 /*
 * Task 0
 */
-stuff
+let header = document.querySelector('header');
+header.style.color = '#FF0000';
