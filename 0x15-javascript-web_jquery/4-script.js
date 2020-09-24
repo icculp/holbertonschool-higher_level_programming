@@ -1,8 +1,14 @@
 #!/usr/bin/node
 /*
-* Task 2
+* Task 4
 */
-$('div#red_header').click(function() {
-    $('header').addClass('red').css('color', '#FF0000')
+const $ = window.$;
+$('div#toggle_header').click(function () {
+  if ($('header').hasClass('red')) {
+    $('header').removeClass('red');
+    $('header').addClass('green');
+  } else if ($('header').hasClass('green')) {
+    $('header').removeClass('green');
+    $('header').addClass('red');
+  }
 });
-

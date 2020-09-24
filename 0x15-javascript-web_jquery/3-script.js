@@ -1,8 +1,8 @@
 #!/usr/bin/node
 /*
-* Task 2
+* Task 3
 */
-$('div#red_header').click(function() {
-    $('header').addClass('red').css('color', '#FF0000')
+const $ = window.$;
+$('div#red_header').click(function () {
+  $('header').addClass('red').css('color', '#FF0000');
 });
-
