@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /*
-* Task 4
+* Task 5
 */
 const $ = window.$;
 $('div#add_item').click(function () {
