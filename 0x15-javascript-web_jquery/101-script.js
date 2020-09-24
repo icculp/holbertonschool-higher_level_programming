@@ -1,12 +1,20 @@
 #!/usr/bin/node
 /*
-* Task 9
+* Task 11
 */
 const $ = window.$;
 
 function doSomething () {
-  $.getJSON('https://fourtonfish.com/hellosalut/?lang=fr', function (data) {
-    $('div#hello').append(data.hello);
+  $('div#add_item').click(function () {
+    $('ul.my_list').append('<li>Item</li>');
+  });
+
+  $('div#remove_item').click(function () {
+    $('ul.my_list li:last-child').remove();
+  });
+
+  $('div#clear_list').click(function () {
+    $('ul.my_list').empty();
   });
 }
 
